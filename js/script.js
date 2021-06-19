@@ -262,7 +262,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
             
 
-            fetch('server1.php', {
+            fetch('server.php', {
                 method: "POST",
                 headers: {
                     'Content-type': 'application/json'
