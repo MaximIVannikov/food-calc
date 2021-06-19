@@ -256,20 +256,21 @@ window.addEventListener('DOMContentLoaded', () => {
             
             const formData = new FormData(form);
 
-            //const object = {};
-            //formData.forEach(function(key, value)  {
-            //    object[key] = value;
-            //});
-            //const json = JSON.stringify(object);
+            const object = {};
+            formData.forEach(function(key, value)  {
+                object[key] = value;
+            });
+            
 
-            fetch('server.php', {
+            fetch('server1.php', {
                 method: "POST",
-                //headers: {
-                //    'Content-type': 'application/json'
-                //},
-                body: formData
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(object)
 
-            }).then(data => data.text())
+            })
+            .then(data => data.text())
             .then(data => {
                 console.log(data);
                 showThanksModal(message.success);                
